@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
+import { AddEventComponent } from './add-event/add-event.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    AddEventComponent
   ],
   imports: [
     BrowserModule,
@@ -17,6 +19,7 @@ import { RouterModule } from '@angular/router';
     RouterModule.forRoot([
         { path: '', component: LoginComponent, pathMatch: 'full' },
         { path: 'Login', component: LoginComponent},
+        { path: 'AddEvent', component: AddEventComponent},
 
     ])
 ],
