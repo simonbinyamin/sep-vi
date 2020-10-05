@@ -5,6 +5,11 @@
 export const environment = {
   production: false,
   addevent: 'http://localhost:50283/api/Values/PostEvent',
+  addrecruitment:'http://localhost:50283/api/Values/PostRec',
+  eventlist: 'http://localhost:50283/api/Values/EventList',
+  recruitmentlist:'http://localhost:50283/api/Values/RecList',
+  geteventbyid:'http://localhost:50283/api/Values/GetEventById',
+  putfeedback:'http://localhost:50283/api/Values/PutFeedback'
 };
 
 /*
