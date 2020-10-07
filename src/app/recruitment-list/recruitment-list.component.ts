@@ -10,16 +10,42 @@ import { recruitment } from '../../models/recruitment.model';
 export class RecruitmentListComponent implements OnInit {
 
   recruit: recruitment[];
+  valueUpdate:string;
+  valueUpdate2:string;
+  role = localStorage.getItem('role');
+  valueDep: string;
   constructor(private _userService: UserService) { }
 
   ngOnInit() {
 
-
-    this._userService.GetRecruitments().subscribe((list: recruitment[]) => {
-      this.recruit = list;
-      console.log(list);
-  });
-
-
   }
+
+
+  updateJob(){
+    alert("status updated");
+    this.valueUpdate2 = this.valueUpdate;
+  }
+
+  findJob() {
+  
+  
+    const recjnt = new recruitment("", this.valueDep);
+  
+  
+  
+      this._userService.GetJob(recjnt).subscribe((l: recruitment) => {
+  
+        const rec3= [l];
+        console.log(l);
+        this.recruit = rec3;
+  
+  
+  
+  
+      });
+  
+  
+  
+    }
+
 }

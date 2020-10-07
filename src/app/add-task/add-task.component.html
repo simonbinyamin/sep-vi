@@ -1,0 +1,54 @@
+
+<form>
+
+    <div class="form-group">
+        <label for="">Department:</label>
+
+        <p></p>
+      <input class="form-check-input" type="radio" [(ngModel)]="valueDep" name="gob" value="admin" [checked]="true" (change)="onItemChange($event.target.value)"/>
+      &nbsp;
+      <label for="">Adminstartion</label>
+     <input class="form-check-input" type="radio" [(ngModel)]="valueDep" name="gob" value="service" [checked]="true" (change)="onItemChange($event.target.value)"/>
+     &nbsp;
+     <label for="">Servcies</label>
+
+      <p></p>
+
+      <input class="form-check-input" type="radio" [(ngModel)]="valueDep" name="gob" value="product" [checked]="true" (change)="onItemChange($event.target.value)"/>
+      &nbsp;
+      <label for="">Production</label>
+     <input class="form-check-input" type="radio" [(ngModel)]="valueDep" name="gob" value="finans" [checked]="true" (change)="onItemChange($event.target.value)"/>
+     &nbsp;
+     <label for="">Financal</label>
+
+    </div>
+
+
+    <div class="form-group">
+        <label for="">Category:</label>
+
+        <p></p>
+      <input class="form-check-input" type="radio" [(ngModel)]="valueRole" name="Decorations" value="Decorations" [checked]="true" (change)="onItemChange($event.target.value)"/>
+      &nbsp;
+      <label for="">Decorations</label>
+     <input class="form-check-input" type="radio" [(ngModel)]="valueRole" name="Parties" value="Parties" [checked]="true" (change)="onItemChange($event.target.value)"/>
+     &nbsp;
+     <label for="">Parties</label>
+
+      <p></p>
+
+      <input class="form-check-input" type="radio" [(ngModel)]="valueRole" name="Photos" value="Photos" [checked]="true" (change)="onItemChange($event.target.value)"/>
+      &nbsp;
+      <label for="">Photos</label>
+     <input class="form-check-input" type="radio" [(ngModel)]="valueRole" name="Breakfest" value="Breakfest" [checked]="true" (change)="onItemChange($event.target.value)"/>
+     &nbsp;
+     <label for="">Breakfest</label>
+
+     <input class="form-check-input" type="radio" [(ngModel)]="valueRole" name="Drinks" value="Drinks" [checked]="true" (change)="onItemChange($event.target.value)"/>
+     &nbsp;
+     <label for="">Drinks</label>
+    </div>
+
+
+    <button type="submit" (click)="addTask()" class="btn btn-primary">Submit</button>
+</form>

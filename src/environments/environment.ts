@@ -4,8 +4,13 @@
 
 export const environment = {
   production: false,
-  addevent: 'http://localhost:50283/api/Values/PostEvent',
-  addrecruitment:'http://localhost:50283/api/Values/PostRec',
+  addevent: 'http://127.0.0.1:5000/controller/add_event',
+  addfinancial:'http://127.0.0.1:5000/controller/add_financial',
+  getevent: 'http://127.0.0.1:5000/controller/get_event',
+  getjob:'http://127.0.0.1:5000/controller/get_job',
+  getfinancial:'',
+  addrecruitment:'http://127.0.0.1:5000/controller/add_job',
+  loginuser:'http://127.0.0.1:5000/auth/login',
   eventlist: 'http://localhost:50283/api/Values/EventList',
   recruitmentlist:'http://localhost:50283/api/Values/RecList',
   geteventbyid:'http://localhost:50283/api/Values/GetEventById',

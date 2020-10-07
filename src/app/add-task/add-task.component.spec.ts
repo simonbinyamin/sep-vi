@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FeasibilityReviewComponent } from './feasibility-review.component';
+import { AddTaskComponent } from './add-task.component';
 
-describe('FeasibilityReviewComponent', () => {
-  let component: FeasibilityReviewComponent;
-  let fixture: ComponentFixture<FeasibilityReviewComponent>;
+describe('AddTaskComponent', () => {
+  let component: AddTaskComponent;
+  let fixture: ComponentFixture<AddTaskComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FeasibilityReviewComponent ]
+      declarations: [ AddTaskComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FeasibilityReviewComponent);
+    fixture = TestBed.createComponent(AddTaskComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

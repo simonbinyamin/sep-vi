@@ -5,6 +5,8 @@ import { environment } from '../environments/environment';
 import { map } from "rxjs/operators";
 import { event } from "../models/event.model";
 import { recruitment } from "../models/recruitment.model";
+import { user } from 'src/models/user.model';
+import { financial } from 'src/models/financial.model';
 
 
 @Injectable()
@@ -14,6 +16,14 @@ export class UserService {
 
     constructor(private httpClient: HttpClient) { }
 
+
+    public PostLogin(user: user): Observable<user> {
+
+        return this.httpClient.post(environment.loginuser, user)
+            .pipe(map((c: user) => c));
+
+    }
+
     
     public PostRecruitment(recruitment: recruitment): Observable<recruitment> {
 
@@ -21,11 +31,35 @@ export class UserService {
             .pipe(map((c: recruitment) => c));
 
     }
+    public PostFinancial(financial: financial): Observable<financial> {
 
+        return this.httpClient.post(environment.addfinancial, financial)
+            .pipe(map((c: financial) => c));
+
+    }
 
     public PostEvent(event: event): Observable<event> {
 
         return this.httpClient.post(environment.addevent, event)
+            .pipe(map((c: event) => c));
+
+    }
+    public GetJob(recruitment: recruitment): Observable<recruitment> {
+
+        return this.httpClient.post(environment.getjob, recruitment)
+            .pipe(map((c: recruitment) => c));
+
+    }
+
+    public GetFinancial(financial: financial): Observable<financial> {
+
+        return this.httpClient.post(environment.getfinancial, financial)
+            .pipe(map((c: financial) => c));
+
+    }
+    public GetEvent(event: event): Observable<event> {
+
+        return this.httpClient.post(environment.getevent, event)
             .pipe(map((c: event) => c));
 
     }

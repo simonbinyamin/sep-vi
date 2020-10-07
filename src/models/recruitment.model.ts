@@ -5,7 +5,7 @@ export class recruitment {
     public exyears: number;
     public jobtitle: string;
     public jobdesc: string;
-
+    public id: string;
 
     constructor(
 
@@ -14,6 +14,7 @@ export class recruitment {
         exyears?: number,
         jobtitle?: string,
         jobdesc?: string,
+        id?: string,
 
     ) {
         this.type = type;
@@ -23,6 +24,6 @@ export class recruitment {
         this.jobtitle = jobtitle;
 
         this.jobdesc = jobdesc;
-  
+        this.id = id;
     }
 }

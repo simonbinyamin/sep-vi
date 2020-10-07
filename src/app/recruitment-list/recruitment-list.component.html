@@ -1,20 +1,50 @@
+<div class="iclear form-group">
+  <label for="">Find by department</label>
+  <input type="text" name="dep" [(ngModel)]="valueDep" class="form-control">
+</div>
+
+<button type="submit" (click)="findJob()" class="btn btn-primary">Submit</button>
+
+
 <table class="table ttable">
-    <tbody *ngFor="let e of recruit">
-      <tr>
-        <td >
+  <thead>
+    <tr>
+      <th scope="col">title</th>
+      <th scope="col">description</th>
+      <th scope="col">type</th>
+      <th scope="col">department</th>
+      <th scope="col">exprince</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let e of recruit">
+    <tr>
+      <td>
+        <p>{{ e.jobtitle }}</p>
+      </td>
+      <td>
+        <p>{{ e.jobdesc }}</p>
+      </td>
 
+      <td>
+        <p>{{ e.type }}</p>
+      </td>
+      <td>
+        <p>{{ e.dep }}</p>
+      </td>
+      <td>
+        <p>{{ e.exyears }}</p>
+      </td>
 
+      <td *ngIf="role == 'HR'">
+        <input type="text" name="name" [(ngModel)]="valueUpdate"  class="form-control" placeholder="status">
+      </td>
+      <td *ngIf="role == 'HR'">
+        <button (click)="updateJob()" class="btn btn-danger">Update</button>
+      </td>
 
-          <b>{{ e.type }}</b>
-
-
-        </td>
-
-        <td>
-            <b>{{ e.dep }}</b>
-
-        
-        </td>
-      </tr>
-      </tbody>
-  </table>
+      <td>
+        <p>{{valueUpdate2 }}</p>
+      </td>
+    </tr>
+  </tbody>
+</table>

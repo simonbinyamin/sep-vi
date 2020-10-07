@@ -1,0 +1,47 @@
+<div class="iclear form-group">
+    <label for="">Find by department</label>
+    <input type="text" name="dep" [(ngModel)]="valueDep" class="form-control">
+  </div>
+  
+  <button type="submit" (click)="findRequest()" class="btn btn-primary">Submit</button>
+  
+  
+  <table class="table ttable">
+    <thead>
+      <tr>
+        <th scope="col">Department</th>
+        <th scope="col">Refrence</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Reason</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let e of request">
+      <tr>
+        <td>
+          <p>{{ e.dep }}</p>
+        </td>
+        <td>
+          <p>{{ e.ref }}</p>
+        </td>
+  
+        <td>
+          <p>{{ e.amount }}</p>
+        </td>
+        <td>
+          <p>{{ e.reason }}</p>
+        </td>
+
+  
+        <td *ngIf="role == 'FM'">
+          <input type="text" name="name" [(ngModel)]="valueUpdate"  class="form-control" placeholder="status">
+        </td>
+        <td *ngIf="role == 'FM'">
+          <button (click)="updateJob()" class="btn btn-danger">Update</button>
+        </td>
+  
+        <td>
+          <p>{{valueUpdate2 }}</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>

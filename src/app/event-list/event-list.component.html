@@ -1,20 +1,58 @@
+<div class="iclear form-group">
+  <label for="">Find event</label>
+  <input type="text" name="name" [(ngModel)]="valueName" class="form-control">
+</div>
+
+<button type="submit" (click)="findEvent()" class="btn btn-primary">Submit</button>
+
 <table class="table ttable">
-    <tbody *ngFor="let e of evet">
-      <tr>
-        <td >
+  <thead>
+    <tr>
+      <th scope="col">name</th>
+      <th scope="col">record</th>
+      <th scope="col">from</th>
+      <th scope="col">attend</th>
+      <th scope="col">budget</th>
+      <th scope="col">prefs</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let e of evet">
+    <tr>
+      <td>
+        <b>{{ e.name }}</b>
+      </td>
+      <td>
+        <p>{{ e.record }}</p>
+      </td>
+      <td>
+        <p>{{ e.from }} - {{ e.to }}</p>
+      </td>
+      <td>
+        <p>{{ e.attend }}</p>
+      </td>
+      <td>
+        <p>{{ e.budget }}</p>
+      </td>
+      <td>
+        <p>{{ e.prefs[0] }} {{ e.prefs[1] }} {{ e.prefs[2] }} {{ e.prefs[3] }} {{ e.prefs[4] }}</p>
+      </td>
 
+      <td *ngIf="role == 'FM'">
+        <input type="text" class="form-control" placeholder="comment">
+      </td>
+      <td *ngIf="role == 'FM'">
+        <button class="btn btn-primary">Send</button>
+      </td>
+      <td *ngIf="role == 'SCS'">
+        <button (click)="acceptEvent('AM')" class="btn btn-primary">Accept</button>
+      </td>
+      <td *ngIf="role == 'AM'">
+        <button (click)="acceptEvent('SCS')" class="btn btn-primary">Accept</button>
+      </td>
 
-
-          <b>{{ e.name }}</b>
-
-
-        </td>
-
-        <td>
-            <b>{{ e.record }}</b>
-
-        
-        </td>
-      </tr>
-      </tbody>
-  </table>
+      <td *ngIf="role == 'SCS'|| role == 'AM'">
+        <button (click)="rejectEvent()" class="btn btn-danger">Reject</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

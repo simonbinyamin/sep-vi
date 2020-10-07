@@ -38,6 +38,9 @@ export class RecruitmentRequestComponent implements OnInit {
 
     this._userService.PostRecruitment(rec).subscribe((l: recruitment) => {
       console.log(l);
+      if(l.jobtitle) {
+        location.href = "/RecList/";
+      }
 
 
     });

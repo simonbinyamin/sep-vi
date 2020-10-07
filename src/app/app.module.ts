@@ -6,22 +6,30 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { AddEventComponent } from './add-event/add-event.component';
-import { FeasibilityReviewComponent } from './feasibility-review/feasibility-review.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { EventListComponent } from './event-list/event-list.component';
 import { RecruitmentRequestComponent } from './recruitment-request/recruitment-request.component';
 import { RecruitmentListComponent } from './recruitment-list/recruitment-list.component';
+import { LoggedInComponent } from './logged-in/logged-in.component';
+import { FinancialRequestComponent } from './financial-request/financial-request.component';
+import { FinancialListComponent } from './financial-list/financial-list.component';
+import { AddTaskComponent } from './add-task/add-task.component';
+import { TaskListComponent } from './task-list/task-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AddEventComponent,
-    FeasibilityReviewComponent,
     EventListComponent,
     RecruitmentRequestComponent,
-    RecruitmentListComponent
+    RecruitmentListComponent,
+    LoggedInComponent,
+    FinancialRequestComponent,
+    FinancialListComponent,
+    AddTaskComponent,
+    TaskListComponent
   ],
   imports: [
     BrowserModule,
@@ -33,9 +41,13 @@ import { RecruitmentListComponent } from './recruitment-list/recruitment-list.co
         { path: 'Login', component: LoginComponent},
         { path: 'AddEvent', component: AddEventComponent},
         { path: 'EventList', component: EventListComponent},
-        { path: 'Feasable', component: FeasibilityReviewComponent},
         { path: 'Rec', component: RecruitmentRequestComponent},
         { path: 'RecList', component: RecruitmentListComponent},
+        { path: 'LoggedIn', component: LoggedInComponent},
+        { path: 'FinRec', component: FinancialRequestComponent},
+        { path: 'FinList', component: FinancialListComponent},
+        { path: 'AddTask', component: AddTaskComponent},
+        { path: 'TaskList', component: TaskListComponent},
 
 
     ])

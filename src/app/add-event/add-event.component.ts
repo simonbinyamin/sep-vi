@@ -26,7 +26,9 @@ export class AddEventComponent implements OnInit {
   constructor(private _userService: UserService) { }
 
 
-  ngOnInit(): void {
+  ngOnInit() {
+    var role = localStorage.getItem('role');
+    console.log(role);
   }
 
 
@@ -57,6 +59,9 @@ export class AddEventComponent implements OnInit {
 
     this._userService.PostEvent(evejnt).subscribe((l: event) => {
       console.log(l);
+      if(l.name) {
+        location.href = "/EventList/";
+      }
 
 
     });
