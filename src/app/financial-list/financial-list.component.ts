@@ -23,7 +23,6 @@ export class FinancialListComponent implements OnInit {
 
   
   update(){
-    alert("status updated");
     this.valueUpdate2 = this.valueUpdate;
   }
   findRequest() {

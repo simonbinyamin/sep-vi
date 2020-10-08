@@ -25,11 +25,11 @@ export class EventListComponent implements OnInit {
 
 
   rejectEvent() {
-    alert("Event rejected");
+    this.valueComment2 = "Event rejected";
   }
 
   acceptEvent(e) {
-    alert("Event accepted is forwarded to " + e);
+    this.valueComment2 = "Event accepted is forwarded to " + e;
   }
 
 

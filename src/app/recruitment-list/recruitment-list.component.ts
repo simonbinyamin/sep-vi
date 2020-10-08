@@ -22,7 +22,6 @@ export class RecruitmentListComponent implements OnInit {
 
 
   updateJob(){
-    alert("status updated");
     this.valueUpdate2 = this.valueUpdate;
   }
 
