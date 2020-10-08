@@ -11,37 +11,40 @@ export class EventListComponent implements OnInit {
   evet: event[];
   role = localStorage.getItem('role');
   valueName: string;
+  valueComment: string;
+  valueComment2: string;
   constructor(private _userService: UserService) { }
 
   ngOnInit() {
 
   }
 
-rejectEvent(){
-  alert("Event rejected");
-}
-  
-acceptEvent(e){
-  alert("Event accepted is forwarded to "+ e);
-}
-  
-
-findEvent() {
+  onComment() {
+    this.valueComment2 = this.valueComment;
+  }
 
 
-  const evejnt = new event("", this.valueName);
+  rejectEvent() {
+    alert("Event rejected");
+  }
+
+  acceptEvent(e) {
+    alert("Event accepted is forwarded to " + e);
+  }
+
+
+  findEvent() {
+
+
+    const evejnt = new event("", this.valueName);
 
 
 
     this._userService.GetEvent(evejnt).subscribe((l: event) => {
 
-      const evet3= [l];
+      const evet3 = [l];
       console.log(l);
       this.evet = evet3;
-
-
-
-
     });
 
 

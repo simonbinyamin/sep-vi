@@ -38,10 +38,10 @@
       </td>
 
       <td *ngIf="role == 'FM'">
-        <input type="text" class="form-control" placeholder="comment">
+        <input type="text" name="comment" [(ngModel)]="valueComment" class="form-control" placeholder="comment">
       </td>
       <td *ngIf="role == 'FM'">
-        <button class="btn btn-primary">Send</button>
+        <button (click)="onComment()" class="btn btn-primary">Send</button>
       </td>
       <td *ngIf="role == 'SCS'">
         <button (click)="acceptEvent('AM')" class="btn btn-primary">Accept</button>
@@ -52,6 +52,10 @@
 
       <td *ngIf="role == 'SCS'|| role == 'AM'">
         <button (click)="rejectEvent()" class="btn btn-danger">Reject</button>
+      </td>
+
+      <td>
+        {{valueComment2}}
       </td>
     </tr>
   </tbody>

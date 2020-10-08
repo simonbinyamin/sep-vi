@@ -17,7 +17,7 @@
       
 
       <li *ngIf="role == 'PM'"><a href="/AddTask">Create Task</a></li>
-      <li *ngIf="role == 'PM' || role == 'Drinks' || role == 'Breakfest' || role == 'Photos' || role == 'Parties' || role == 'Decorations' "><a href="/TaskList">Task List</a></li>
+      <li *ngIf="role == 'PM' || role == 'drink' || role == 'breakfest' || role == 'photo' || role == 'party' || role == 'decoration' "><a href="/TaskList">Task List</a></li>
 
     </ul>
   </div>
@@ -27,3 +27,4 @@
 <router-outlet></router-outlet>
 
 </div>
+
