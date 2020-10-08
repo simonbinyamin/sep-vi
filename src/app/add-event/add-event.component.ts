@@ -22,7 +22,7 @@ export class AddEventComponent implements OnInit {
   valueFrom: Date;
   valueTo: Date;
   valueAttend: number;
-
+  valueResult:string;
   constructor(private _userService: UserService) { }
 
 
@@ -59,8 +59,10 @@ export class AddEventComponent implements OnInit {
 
     this._userService.PostEvent(evejnt).subscribe((l: event) => {
       console.log(l);
-      if(l.name) {
-        location.href = "/EventList/";
+      if(l.result=="ok") {
+        this.valueResult = "Event successfully created!";
+      } else {
+        this.valueResult = "form is not filled correctly";
       }
 
 

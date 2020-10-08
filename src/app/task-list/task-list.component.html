@@ -1,1 +1,36 @@
-<p>task-list works!</p>
+<div class="iclear form-group">
+    <label for="">Find by subteam</label>
+    <input type="text" name="subteamrole" [(ngModel)]="valueSubteamrole" class="form-control">
+</div>
+
+<button type="submit" (click)="findTask()" class="btn btn-primary">Submit</button>
+
+
+<p></p>
+<div class="form-group">
+    <label for="exampleInputEmail1">subteam name</label>
+    <input type="text" value="{{evet?.subteamrole}}" name="subteamrole2" [(ngModel)]="valueSubteamrole2" class="form-control" readonly>
+
+</div>
+
+
+<p></p>
+<div class="form-group">
+    <label for="exampleInputEmail1">Department</label>
+    <input type="text" value="{{evet?.dep}}" name="dep" [(ngModel)]="valueDep" class="form-control" readonly>
+</div>
+
+<p></p>
+
+<div class="iclear form-group">
+    <label for="">Plan info</label>
+    <textarea type="text" placeholder="Plan" value="{{evet?.plan}}" name="Plan" [(ngModel)]="valuePlan" class="form-control"></textarea>
+  </div>
+
+
+  <div *ngIf="role == 'PM' || role == 'Drinks'">
+    <button (click)="update(evet?.subteamrole, evet?.dep, valuePlan)" class="btn btn-danger">Update</button>
+  </div>
+
+
+  <h3>{{valueResult}}</h3>

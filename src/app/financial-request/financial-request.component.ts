@@ -15,6 +15,7 @@ export class FinancialRequestComponent implements OnInit {
   valueRef: string;
   valueAmount: number;
   valueReason: string;
+  valueResult:string;
 
   constructor(private _userService: UserService) { }
 
@@ -36,9 +37,13 @@ export class FinancialRequestComponent implements OnInit {
 
   this._userService.PostFinancial(req).subscribe((l: financial) => {
     console.log(l);
-    if(l.amount) {
-      location.href = "/FinList/";
+
+    if(l.result=="ok") {
+      this.valueResult = "Request successful created!";
+    } else {
+      this.valueResult = "form is not filled correctly";
     }
+
 
 
   });

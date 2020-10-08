@@ -7,6 +7,7 @@ import { event } from "../models/event.model";
 import { recruitment } from "../models/recruitment.model";
 import { user } from 'src/models/user.model';
 import { financial } from 'src/models/financial.model';
+import { task } from 'src/models/task.model';
 
 
 @Injectable()
@@ -38,6 +39,14 @@ export class UserService {
 
     }
 
+    public PostTask(task: task): Observable<task> {
+
+        return this.httpClient.post(environment.addtask, task)
+            .pipe(map((c: task) => c));
+
+    }
+
+
     public PostEvent(event: event): Observable<event> {
 
         return this.httpClient.post(environment.addevent, event)
@@ -48,6 +57,19 @@ export class UserService {
 
         return this.httpClient.post(environment.getjob, recruitment)
             .pipe(map((c: recruitment) => c));
+
+    }
+
+    public GetTask(task: task): Observable<task> {
+
+        return this.httpClient.post(environment.gettask, task)
+            .pipe(map((c: task) => c));
+
+    }
+    public DeleteTask(task: task): Observable<task> {
+
+        return this.httpClient.post(environment.deletetask, task)
+            .pipe(map((c: task) => c));
 
     }
 

@@ -6,6 +6,7 @@ export class recruitment {
     public jobtitle: string;
     public jobdesc: string;
     public id: string;
+    result: string;
 
     constructor(
 

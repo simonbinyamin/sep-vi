@@ -5,9 +5,9 @@
     <div class="form-group">
       <label for="">Contract type:</label>
       &nbsp;
-      <input class="form-check-input" type="radio" [(ngModel)]="valueType" name="gob" value="fulltime" [checked]="true" (change)="onItemChange($event.target.value)"/>
+      <input class="form-check-input" type="radio" [(ngModel)]="valueType" name="gob" value="fulltime" [checked]="true" (change)="onItemChangeType($event.target.value)"/>
      <label for="">Fulltime</label>
-     <input class="form-check-input" type="radio" [(ngModel)]="valueType" name="gob" value="parttime" [checked]="true" (change)="onItemChange($event.target.value)"/>
+     <input class="form-check-input" type="radio" [(ngModel)]="valueType" name="gob" value="parttime" [checked]="true" (change)="onItemChangeType($event.target.value)"/>
       <label for="">Parttime</label>
 
 
@@ -17,19 +17,19 @@
         <label for="">Department:</label>
 
         <p></p>
-      <input class="form-check-input" type="radio" [(ngModel)]="valueDep" name="gob" value="admin" [checked]="true" (change)="onItemChange($event.target.value)"/>
+      <input class="form-check-input" type="radio" [(ngModel)]="valueDep" name="go2b" value="admin" [checked]="true" (change)="onItemChange($event.target.value)"/>
       &nbsp;
       <label for="">Adminstartion</label>
-     <input class="form-check-input" type="radio" [(ngModel)]="valueDep" name="gob" value="service" [checked]="true" (change)="onItemChange($event.target.value)"/>
+     <input class="form-check-input" type="radio" [(ngModel)]="valueDep" name="go2b" value="service" [checked]="true" (change)="onItemChange($event.target.value)"/>
      &nbsp;
      <label for="">Servcies</label>
 
       <p></p>
 
-      <input class="form-check-input" type="radio" [(ngModel)]="valueDep" name="gob" value="product" [checked]="true" (change)="onItemChange($event.target.value)"/>
+      <input class="form-check-input" type="radio" [(ngModel)]="valueDep" name="go2b" value="product" [checked]="true" (change)="onItemChange($event.target.value)"/>
       &nbsp;
       <label for="">Production</label>
-     <input class="form-check-input" type="radio" [(ngModel)]="valueDep" name="gob" value="finans" [checked]="true" (change)="onItemChange($event.target.value)"/>
+     <input class="form-check-input" type="radio" [(ngModel)]="valueDep" name="go2b" value="finans" [checked]="true" (change)="onItemChange($event.target.value)"/>
      &nbsp;
      <label for="">Financal</label>
 
@@ -53,3 +53,5 @@
 
     <button type="submit" (click)="addRecruitment()" class="btn btn-primary">Submit</button>
 </form>
+
+<h3>{{valueResult}}</h3>

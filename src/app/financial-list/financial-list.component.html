@@ -1,6 +1,6 @@
 <div class="iclear form-group">
-    <label for="">Find by department</label>
-    <input type="text" name="dep" [(ngModel)]="valueDep" class="form-control">
+    <label for="">Find by refrence</label>
+    <input type="text" name="ref" [(ngModel)]="valueRef" class="form-control">
   </div>
   
   <button type="submit" (click)="findRequest()" class="btn btn-primary">Submit</button>
@@ -36,7 +36,7 @@
           <input type="text" name="name" [(ngModel)]="valueUpdate"  class="form-control" placeholder="status">
         </td>
         <td *ngIf="role == 'FM'">
-          <button (click)="updateJob()" class="btn btn-danger">Update</button>
+          <button (click)="update()" class="btn btn-danger">Update</button>
         </td>
   
         <td>

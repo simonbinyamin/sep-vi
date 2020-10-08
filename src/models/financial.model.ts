@@ -4,6 +4,7 @@ export class financial {
     public ref: string;
     public amount: number;
     public reason: string;
+  result: string;
 
 
     constructor(

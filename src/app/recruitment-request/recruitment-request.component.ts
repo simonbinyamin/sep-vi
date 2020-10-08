@@ -14,7 +14,7 @@ export class RecruitmentRequestComponent implements OnInit {
   valueExyears: number;
   valueJobtitle: string;
   valueJobdesc: string;
-  
+  valueResult: string;
 
   constructor(private _userService: UserService) { }
 
@@ -26,7 +26,9 @@ export class RecruitmentRequestComponent implements OnInit {
     console.log(" Value is : ", value );
  }
 
-
+ onItemChangeType(value){
+  console.log(" Value is : ", value );
+}
 
   addRecruitment() {
 
@@ -38,8 +40,10 @@ export class RecruitmentRequestComponent implements OnInit {
 
     this._userService.PostRecruitment(rec).subscribe((l: recruitment) => {
       console.log(l);
-      if(l.jobtitle) {
-        location.href = "/RecList/";
+      if(l.result=="ok") {
+        this.valueResult = "Recruitment successful created!";
+      } else {
+        this.valueResult = "form is not filled correctly";
       }
 
 

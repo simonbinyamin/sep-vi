@@ -14,7 +14,7 @@ export class FinancialListComponent implements OnInit {
   valueUpdate:string;
   valueUpdate2:string;
   role = localStorage.getItem('role');
-  valueDep: string;
+  valueRef: string;
 
   constructor(private _userService: UserService) { }
 
@@ -29,7 +29,7 @@ export class FinancialListComponent implements OnInit {
   findRequest() {
   
   
-    const req = new financial(this.valueDep);
+    const req = new financial("",this.valueRef);
   
   
   

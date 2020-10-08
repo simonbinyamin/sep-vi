@@ -7,6 +7,7 @@ export class event {
     public attend: number;
     public budget: number;
     public prefs: string[];
+    result: string;
 
 
 
